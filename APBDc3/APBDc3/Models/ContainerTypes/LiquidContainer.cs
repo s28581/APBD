@@ -1,6 +1,11 @@
-﻿namespace APBDc3.Models.ContainerTypes;
+﻿using APBDc3.Models.Base;
 
-public class LiquidContainer
+namespace APBDc3.Models.ContainerTypes;
+
+public class LiquidContainer : ContainerBase
 {
-    
+    public LiquidContainer(double loadWeight, double ownWeight, double maxWeight, double height, double depth) : base(loadWeight, ownWeight, maxWeight, height, depth)
+    {
+    }
+
 }

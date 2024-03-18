@@ -1,4 +1,6 @@
-﻿namespace APBDc3.Models.Base;
+﻿using APBDc3.Exceptions;
+
+namespace APBDc3.Models.Base;
 
 public abstract class ContainerBase
 {
@@ -16,6 +18,20 @@ public abstract class ContainerBase
         MaxWeight = maxWeight;
         Height = height;
         Depth = depth;
+    }
+
+    public void Unload(double weightToUnload)
+    {
+        LoadWeight -= weightToUnload;
+    }
+
+    public void Load(double weightToLoad)
+    {
+        LoadWeight += weightToLoad;
+        if (LoadWeight > MaxWeight)
+        {
+            throw new OverfillException();
+        }
     }
     
 }
