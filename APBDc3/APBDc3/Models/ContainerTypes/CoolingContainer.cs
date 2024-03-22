@@ -2,9 +2,17 @@
 
 namespace APBDc3.Models.ContainerTypes;
 
-public class CoolingContainer : ContainerBase
+public class CoolingContainer: ContainerBase
 {
-    public CoolingContainer(double loadWeight, double ownWeight, double maxWeight, double height, double depth) : base(loadWeight, ownWeight, maxWeight, height, depth)
+    protected static int IDNumber = 1;
+    public CoolingContainer(double loadWeight, double ownWeight, double maxLoadWeight, double height, double depth) : base(loadWeight, ownWeight, maxLoadWeight, height, depth)
     {
+        ID = "KON-C-" + IDNumber;
+        IDNumber++;
+    }
+
+    public String ToString()
+    {
+        return ID;
     }
 }

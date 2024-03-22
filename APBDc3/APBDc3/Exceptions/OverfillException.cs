@@ -4,8 +4,8 @@ namespace APBDc3.Exceptions;
 
 public class OverfillException : Exception
 {
-    public OverfillException()
+    public OverfillException() : base(string.Format("Container is overfilled!!"))
     {
-        Console.WriteLine("Containers is overfilled!!");
+        
     }
 }

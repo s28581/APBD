@@ -6,30 +6,39 @@ public abstract class ContainerBase
 {
     protected double LoadWeight { get; set; }
     protected double OwnWeight { get; set; }
-    protected double MaxWeight { get; set; }
+    protected double MaxLoadWeight { get; set; }
     protected double Height { get; set; }
     protected double Depth { get; set; }
     protected string ID { get; set; }
 
-    public ContainerBase(double loadWeight, double ownWeight, double maxWeight, double height, double depth)
+    public ContainerBase(double loadWeight, double ownWeight, double maxLoadWeight, double height, double depth)
     {
         LoadWeight = loadWeight;
         OwnWeight = ownWeight;
-        MaxWeight = maxWeight;
+        MaxLoadWeight = maxLoadWeight;
         Height = height;
         Depth = depth;
     }
 
     public void Unload(double weightToUnload)
     {
-        LoadWeight -= weightToUnload;
+        if (weightToUnload < LoadWeight)
+        {
+            LoadWeight -= weightToUnload;
+        }
+        else
+        {
+            Console.WriteLine("Not enough load to unload, unloaded " + LoadWeight + " kg");
+            LoadWeight = 0;
+        }
     }
 
-    public void Load(double weightToLoad)
+    public void Load(double weightToLoad, Product product)
     {
         LoadWeight += weightToLoad;
-        if (LoadWeight > MaxWeight)
+        if (LoadWeight > MaxLoadWeight)
         {
+            LoadWeight = MaxLoadWeight;
             throw new OverfillException();
         }
     }
