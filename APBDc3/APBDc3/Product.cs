@@ -2,9 +2,9 @@
 
 public class Product
 {
-    internal String Name { set; get; }
-    internal bool IsDangerous { set; get; }
-    internal double StorageTemerature { set; get; }
+    public String Name { set; get; }
+    public bool IsDangerous { set; get; }
+    public double StorageTemerature { set; get; }
 
     public Product(string name, bool isDangerous, double storageTemerature)
     {

@@ -4,12 +4,12 @@ namespace APBDc3.Models.Base;
 
 public abstract class ContainerBase
 {
-    internal double LoadWeight { get; set; } = 0;
-    protected double OwnWeight { get; set; }
+    public double LoadWeight { get; set; } = 0;
+    public double OwnWeight { get; set; }
     protected double MaxLoadWeight { get; set; }
-    protected double Height { get; set; }
-    protected double Depth { get; set; }
-    internal string ID { get; set; }
+    public double Height { get; set; }
+    public double Depth { get; set; }
+    public string ID { get; set; }
 
     public ContainerBase( double ownWeight, double maxLoadWeight, double height, double depth)
     {
