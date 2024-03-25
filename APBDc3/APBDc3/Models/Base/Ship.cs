@@ -34,6 +34,14 @@ public class Ship
         }
     }
 
+    public void LoadContainers(ContainerBase[] con)
+    {
+        foreach (ContainerBase c in con)
+        {
+            LoadContainer(c);
+        }
+    }
+
     public void UnLoadContainer(String id)
     {
         ContainerBase conToRemove = null;
