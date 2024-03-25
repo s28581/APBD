@@ -4,11 +4,33 @@ namespace APBDc3.Models.ContainerTypes;
 
 public class CoolingContainer: ContainerBase
 {
-    protected static int IDNumber = 1;
-    public CoolingContainer(double loadWeight, double ownWeight, double maxLoadWeight, double height, double depth) : base(loadWeight, ownWeight, maxLoadWeight, height, depth)
+    private Product ProductStored = null;
+    private double temerature;
+    private static int IdCounter { get; set; }
+    public CoolingContainer(double ownWeight, double maxLoadWeight, double height, double depth, double inTemperature) : base(ownWeight, maxLoadWeight, height, depth)
     {
-        ID = "KON-C-" + IDNumber;
-        IDNumber++;
+        ID = "KON-C-" + IdCounter;
+        IdCounter++;
+        temerature = inTemperature;
+    }
+
+    public void Load(double weightToLoad, Product product)
+    {
+        if (LoadWeight == 0)
+        {
+            if (temerature >= product.StorageTemerature)
+            {
+                base.Load(weightToLoad);
+                ProductStored = product;
+            }
+            else
+            {
+                Console.WriteLine("It is too cold for this product");
+            }
+        }else if (ProductStored.Name == product.Name)
+        {
+            LoadWeight += weightToLoad;
+        }
     }
 
     public String ToString()
