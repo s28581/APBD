@@ -6,4 +6,5 @@ public interface IWarehouseService
 {
     int InsertIntoProductWarehouse(Warehouse warehouse);
     int InsertStored(Warehouse warehouse);
+    int GetWarehouseId();
 }

@@ -19,4 +19,10 @@ public class WarehouseController(IWarehouseService service) : ControllerBase
     {
         return Ok(service.InsertStored(warehouse));
     }
+
+    [HttpGet]
+    public IActionResult GetWarehouse([FromBody] Warehouse warehouse)
+    {
+        return Ok(service.GetWarehouseId());
+    }
 }

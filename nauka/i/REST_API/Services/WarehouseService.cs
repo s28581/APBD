@@ -7,6 +7,13 @@ namespace REST_API.Services;
 
 public class WarehouseService(IConfiguration configuration) : IWarehouseService
 {
+    public int GetWarehouseId()
+    {
+        using var sqlConnection = new SqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
+        using var command = new SqlCommand("SELECT IdWarehouse FROM Warehouse WHERE IdWarehouse = @IdWarehouse");
+        return (int)command.ExecuteScalar();
+
+    }
     public int InsertStored(Warehouse warehouse)
     {
         using var sqlConnection = new SqlConnection(configuration["ConnectionStrings:DefaultConnection"]);
