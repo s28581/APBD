@@ -18,5 +18,5 @@ public class Utwor
     [ForeignKey((nameof(IdAlbum)))]
     public int IdAlbum { get; set; }
     
-    public ICollection<WykonawcaUtworu> WykonawcaUtworu { get; set; }
+    public ICollection<Muzyk> Muzycy { get; set; }
 }

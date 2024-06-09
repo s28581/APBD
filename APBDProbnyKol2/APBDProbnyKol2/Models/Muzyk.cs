@@ -18,5 +18,5 @@ public class Muzyk
     [MaxLength(50)]
     public string Pseudonim { get; set; }
     
-    public ICollection<WykonawcaUtworu> WykonawcaUtworu { get; set; }
+    public ICollection<Utwor> Utwory { get; set; }
 }

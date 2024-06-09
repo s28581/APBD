@@ -1,10 +1,14 @@
 using APBDProbnyKol2.Data;
+using APBDProbnyKol2.Interfaces;
+using APBDProbnyKol2.Repositories;
+using APBDProbnyKol2.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-//builder.Services.AddScoped<Irepository, repository>();
+builder.Services.AddScoped<IWytworniaRepository, WytworniaRepository>();
+builder.Services.AddScoped<IWytworniaService, WytworniaService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
