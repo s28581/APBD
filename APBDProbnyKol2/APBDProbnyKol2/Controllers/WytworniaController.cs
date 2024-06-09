@@ -1,4 +1,5 @@
-﻿using APBDProbnyKol2.Interfaces;
+﻿using APBDProbnyKol2.DTOs;
+using APBDProbnyKol2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APBDProbnyKol2.Controllers;
@@ -20,6 +21,17 @@ public class WytworniaController : ControllerBase
         var result = await _wytworniaService.GetMuzyk(idMuzyk, cancellationToken);
         if (result == null)
             return NotFound("Taki muzyk nie istnieje");
+        return Ok(result);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddMuzyk(MuzykDTO muzykDto, CancellationToken cancellationToken)
+    {
+        var result = await _wytworniaService.AddMuzyk(muzykDto, cancellationToken);
+
+        if (result == -1)
+            return BadRequest("Taki muzyk już istnieje!!");
+
         return Ok(result);
     }
     

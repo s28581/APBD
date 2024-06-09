@@ -21,4 +21,9 @@ public class WytworniaService : IWytworniaService
 
         return await _wytworniaRepository.GetMuzyk(idMuzyk, cancellationToken);
     }
+
+    public async Task<int> AddMuzyk(MuzykDTO muzykDto, CancellationToken cancellationToken)
+    {
+        return await _wytworniaRepository.AddMuzyk(muzykDto, cancellationToken);
+    }
 }

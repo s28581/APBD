@@ -16,7 +16,7 @@ public class Utwor
     public float CzasTrwania { get; set; }
     
     [ForeignKey((nameof(IdAlbum)))]
-    public int IdAlbum { get; set; }
+    public int? IdAlbum { get; set; }
     
     public ICollection<Muzyk> Muzycy { get; set; }
 }
