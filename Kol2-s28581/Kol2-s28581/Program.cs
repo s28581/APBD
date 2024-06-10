@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 /*
- * dotnet tool install --global dotnet-ef
  * dotnet new tool-manifest
+ * dotnet tool install --global dotnet-ef
  * dotnet ef migrations add InitialCreate
  * dotnet ef database update
  */
