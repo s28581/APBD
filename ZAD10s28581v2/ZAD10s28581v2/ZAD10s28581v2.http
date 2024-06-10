@@ -1,0 +1,6 @@
+@ZAD10s28581v2_HostAddress = http://localhost:5186
+
+GET {{ZAD10s28581v2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
