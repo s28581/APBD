@@ -4,5 +4,5 @@ namespace ZAD10s28581v2.Repositories;
 
 public interface IPharmacyRepository
 {
-    Task<PrescriptionDTO> AddPrescription(PrescriptionInDTO prescriptionInDto);
+    Task<int> AddPrescription(PrescriptionDTO prescriptionDto, CancellationToken cancellationToken);
 }
