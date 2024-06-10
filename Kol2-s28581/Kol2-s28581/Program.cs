@@ -12,8 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
  * dotnet ef database update
  */
 builder.Services.AddControllers();
-builder.Services.AddScoped<IRepository, Repository>();
-builder.Services.AddScoped<IService, Service>();
+//builder.Services.AddScoped<IRepository, Repository>();
+//builder.Services.AddScoped<IService, Service>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
