@@ -32,6 +32,7 @@ public static class SeedData
                     Title = "Ghostbusters ",
                     ReleaseDate = DateTime.Parse("1984-3-13"),
                     Genre = "Comedy",
+                    Rating = "R",
                     Price = 8.99M
                 },
                 new Movie
